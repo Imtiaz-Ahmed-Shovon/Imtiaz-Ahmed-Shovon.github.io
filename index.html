@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imtiaz Ahmed | Portfolio</title>
+    <title>Imtiaz Ahmed</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -44,7 +44,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--background) 0%, var(--light) 100%);
+            background: var(--background);
             color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
@@ -115,18 +115,6 @@
             color: var(--secondary);
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 176, 255, 0.25);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            margin-left: 15px;
-        }
-
-        .btn-outline:hover {
-            background: var(--secondary);
-            color: white;
         }
 
         /* Header */
@@ -234,17 +222,6 @@
             padding-top: 80px;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
-            opacity: 0.15;
-        }
-
         .hero-content {
             display: flex;
             flex-direction: column;
@@ -274,16 +251,13 @@
         }
 
         .profile-img {
-            width: 100%;
-            max-width: 300px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             border: 5px solid var(--secondary);
             box-shadow: 0 0 40px rgba(0, 176, 255, 0.4);
             transition: transform 0.5s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
+            object-fit: cover;
         }
 
         .hero h1 {
@@ -371,69 +345,167 @@
             opacity: 0.9;
         }
 
-        /* About Section */
+        /* About Me Section */
+        .about {
+            background: var(--light);
+        }
+
         .about-content {
             display: flex;
             gap: 50px;
-            align-items: flex-start;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            height: 400px;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            height: 100%;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background-color: var(--secondary);
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .carousel-control {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-control:hover {
+            background: var(--secondary);
+        }
+
+        /* Education Section */
+        .education-section {
+            background: var(--card-bg);
+            padding: 60px 0;
         }
 
         .education {
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .education-item {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 15px;
+            padding: 30px;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
+            border-left: 4px solid var(--secondary);
         }
 
-        .education:hover {
-            transform: translateY(-10px);
+        .education-item:hover {
+            transform: translateY(-5px);
         }
 
-        .research {
-            flex: 1;
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .research:hover {
-            transform: translateY(-10px);
-        }
-
-        .education-item, .research-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .education-item:last-child, .research-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .education-item h3, .research-item h3 {
+        .education-item h3 {
+            margin-bottom: 10px;
             font-size: 1.5rem;
-            margin-bottom: 10px;
         }
 
-        .education-item p, .research-item p {
-            margin-bottom: 10px;
-            color: var(--text-light);
-        }
-
-        .education-item .institution, .research-item .institution {
+        .education-item .institution {
             font-weight: 600;
-            color: var(--text);
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
         }
 
         .education-item .gpa {
             color: var(--success);
             font-weight: 600;
+            margin-bottom: 15px;
         }
 
         .tag-list {
@@ -459,14 +531,52 @@
             transform: translateY(-3px);
         }
 
-        /* Skills Section */
-        .skills {
+        /* Research Interests Section */
+        .research-interests {
             background: linear-gradient(135deg, var(--primary) 0%, #283593 100%);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .research-interests .section-title h2 {
             color: white;
         }
 
-        .skills .section-title h2 {
+        .interests-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .interests-container p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .interests-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .interest-tag {
+            background: var(--secondary);
             color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--light);
         }
 
         .skills-container {
@@ -476,11 +586,10 @@
         }
 
         .skill-category {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
             border-radius: 20px;
             padding: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow);
             transition: transform 0.3s ease;
         }
 
@@ -491,7 +600,7 @@
         .skill-category h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--secondary);
+            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -499,6 +608,7 @@
 
         .skill-category h3 i {
             font-size: 1.8rem;
+            color: var(--secondary);
         }
 
         .skill-list {
@@ -507,7 +617,7 @@
 
         .skill-list li {
             padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
         }
@@ -899,6 +1009,10 @@
                 border-color: transparent var(--card-bg) transparent transparent;
                 right: auto;
             }
+            
+            .about-image {
+                height: 350px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -917,10 +1031,6 @@
                 text-align: center;
             }
             
-            .btn-outline {
-                margin-left: 0;
-            }
-            
             .contact-details {
                 flex-direction: column;
                 gap: 10px;
@@ -928,6 +1038,19 @@
             
             .category-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .interests-tags {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-image {
+                height: 300px;
             }
         }
     </style>
@@ -942,7 +1065,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#research">Research</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -982,7 +1107,6 @@
                         </div>
                         
                         <div class="cv-download">
-                            <!-- Updated CV download link -->
                             <a href="Imtiaz_CV.pdf" download="Imtiaz_Ahmed_CV.pdf" class="btn">
                                 <i class="fas fa-download"></i> Download CV
                             </a>
@@ -990,7 +1114,7 @@
                     </div>
                     
                     <div class="hero-img">
-                        <!-- Replace with your actual profile image -->
+                        <!-- Profile image -->
                         <img src="profile.jpg" alt="Imtiaz Ahmed" class="profile-img">
                     </div>
                 </div>
@@ -1010,14 +1134,14 @@
                     
                     <div class="category-card" onclick="scrollToSection('research')">
                         <i class="fas fa-flask"></i>
-                        <h3>Research</h3>
-                        <p>My research projects and interests</p>
+                        <h3>Research Interests</h3>
+                        <p>My research focus areas</p>
                     </div>
                     
-                    <div class="category-card" onclick="scrollToSection('experience')">
-                        <i class="fas fa-briefcase"></i>
-                        <h3>Experience</h3>
-                        <p>Professional work and teaching</p>
+                    <div class="category-card" onclick="scrollToSection('skills')">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Skills</h3>
+                        <p>My technical expertise</p>
                     </div>
                     
                     <div class="category-card" onclick="scrollToSection('projects')">
@@ -1026,100 +1150,141 @@
                         <p>Technical implementations</p>
                     </div>
                     
+                    <div class="category-card" onclick="scrollToSection('experience')">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Experience</h3>
+                        <p>Professional work and teaching</p>
+                    </div>
+                    
                     <div class="category-card" onclick="scrollToSection('awards')">
                         <i class="fas fa-award"></i>
                         <h3>Awards</h3>
                         <p>Recognitions and scholarships</p>
                     </div>
                     
-                    <div class="category-card" onclick="scrollToSection('skills')">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Technical Skills</h3>
-                        <p>My technical expertise</p>
-                    </div>
-                    
-                    <div class="category-card" onclick="scrollToSection('research-interests')">
-                        <i class="fas fa-search"></i>
-                        <h3>Research Interests</h3>
-                        <p>Areas of focus and exploration</p>
+                    <div class="category-card" onclick="scrollToSection('references')">
+                        <i class="fas fa-address-card"></i>
+                        <h3>References</h3>
+                        <p>Academic and professional references</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- About Me Section -->
+    <section id="about" class="about">
         <div class="container">
             <div class="section-title">
-                <h2>Education & Research</h2>
+                <h2>About Me</h2>
             </div>
             <div class="about-content">
-                <div class="education" id="education">
-                    <div class="education-item">
-                        <h3>Master of Science in Robotics and Mechatronics Engineering</h3>
-                        <p class="institution">University of Dhaka, Bangladesh</p>
-                        <p class="gpa">CGPA: 3.94/4.00 (Thesis defense pending)</p>
-                        <div class="tag-list">
-                            <span class="tag">Bio-Robotics</span>
-                            <span class="tag">Human-Robot Interaction</span>
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">Internet of Things</span>
-                            <span class="tag">Automotive Control</span>
-                            <span class="tag">Industrial Automation</span>
+                <div class="about-text">
+                    <p>I am an enthusiastic academic specializing in Robotics and Mechatronics Engineering. My expertise spans <span class="highlight">Bio-mechatronics</span>, <span class="highlight">Machine Learning</span>, embedded systems, wearable technology, and IoT-based applications, with a deep commitment to creating innovative solutions for practical, real-world problems.</p>
+                    
+                    <p>I am currently pursuing my Master’s degree at the University of Dhaka, conducting my research under the guidance of <span class="highlight">Dr. Md. Mehedi Hasan</span>.</p>
+                    
+                    <div class="cv-download" style="margin-top: 30px;">
+                        <a href="Imtiaz_CV.pdf" download="Imtiaz_Ahmed_CV.pdf" class="btn">
+                            <i class="fas fa-download"></i> Download Full CV
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="carousel">
+                        <div class="carousel-inner" id="carousel-inner">
+                            <div class="carousel-item">
+                                <img src="research1.jpg" alt="Robotics Research">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="research2.jpg" alt="Academic Work">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="research3.jpg" alt="Project Development">
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-control prev" onclick="prevSlide()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control next" onclick="nextSlide()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="carousel-indicators" id="carousel-indicators">
+                            <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
+                            <div class="carousel-indicator" onclick="goToSlide(1)"></div>
+                            <div class="carousel-indicator" onclick="goToSlide(2)"></div>
                         </div>
                     </div>
-                    
-                    <div class="education-item">
-                        <h3>Bachelor of Science in Robotics and Mechatronics Engineering</h3>
-                        <p class="institution">University of Dhaka, Bangladesh</p>
-                        <p class="gpa">CGPA: 3.62/4.00</p>
-                        <div class="tag-list">
-                            <span class="tag">Artificial Intelligence</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Robot Vision</span>
-                            <span class="tag">Power Electronics</span>
-                            <span class="tag">Linear Algebra</span>
-                        </div>
-                    </div>
-                    
-                    <div class="education-item">
-                        <h3>Higher Secondary Certificate Examination</h3>
-                        <p class="institution">Notre Dame College, Dhaka (2017)</p>
-                        <p class="gpa">GPA: 5.00/5.00</p>
-                    </div>
-                    
-                    <div class="education-item">
-                        <h3>Secondary School Certificate Examination</h3>
-                        <p class="institution">Kushita Zilla School, Kushita (2015)</p>
-                        <p class="gpa">GPA: 5.00/5.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education">
+                <div class="education-item">
+                    <h3>Master of Science in Robotics and Mechatronics Engineering</h3>
+                    <p class="institution">University of Dhaka, Bangladesh</p>
+                    <p class="gpa">CGPA: 3.94/4.00 (Thesis defense pending)</p>
+                    <div class="tag-list">
+                        <span class="tag">Bio-Robotics</span>
+                        <span class="tag">Human-Robot Interaction</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Internet of Things</span>
+                        <span class="tag">Automotive Control</span>
+                        <span class="tag">Industrial Automation</span>
                     </div>
                 </div>
                 
-                <div class="research" id="research">
-                    <div class="research-item" id="research-interests">
-                        <h3>Research Interests</h3>
-                        <p>My research focuses on cutting-edge technologies in robotics and their applications in healthcare and assistance:</p>
-                        <div class="tag-list">
-                            <span class="tag">Bio-medical Signal Processing</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Wearable Devices</span>
-                            <span class="tag">Assistive Technology</span>
-                            <span class="tag">Soft Robotics</span>
-                        </div>
+                <div class="education-item">
+                    <h3>Bachelor of Science in Robotics and Mechatronics Engineering</h3>
+                    <p class="institution">University of Dhaka, Bangladesh</p>
+                    <p class="gpa">CGPA: 3.62/4.00</p>
+                    <div class="tag-list">
+                        <span class="tag">Artificial Intelligence</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Robot Vision</span>
+                        <span class="tag">Power Electronics</span>
+                        <span class="tag">Linear Algebra</span>
                     </div>
-                    
-                    <div class="research-item" id="training">
-                        <h3>Training & Certifications</h3>
-                        <p><strong>Modular Production System (MPS®) and CIROS Software</strong></p>
-                        <p>Sincos Engineers Ltd. — Sincos Automation Technologies Ltd.</p>
-                        <p>Location: Dhaka University</p>
-                        <div class="tag-list">
-                            <span class="tag">Festo MPS System</span>
-                            <span class="tag">PLC Programming</span>
-                            <span class="tag">Siemens Platform</span>
-                        </div>
-                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Higher Secondary Certificate Examination</h3>
+                    <p class="institution">Notre Dame College, Dhaka (2017)</p>
+                    <p class="gpa">GPA: 5.00/5.00</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Secondary School Certificate Examination</h3>
+                    <p class="institution">Kushita Zilla School, Kushita (2015)</p>
+                    <p class="gpa">GPA: 5.00/5.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests Section -->
+    <section id="research" class="research-interests">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Interests</h2>
+            </div>
+            <div class="interests-container">
+                <p>My research focuses on cutting-edge technologies in robotics and their applications in healthcare and assistance:</p>
+                <div class="interests-tags">
+                    <div class="interest-tag">Bio-medical Signal Processing</div>
+                    <div class="interest-tag">Machine Learning</div>
+                    <div class="interest-tag">Wearable Devices</div>
+                    <div class="interest-tag">Assistive Technology</div>
+                    <div class="interest-tag">Soft Robotics</div>
                 </div>
             </div>
         </div>
@@ -1493,6 +1658,59 @@
                 });
             }
         }
+        
+        // Image Carousel Functionality
+        let currentSlide = 0;
+        const carouselInner = document.getElementById('carousel-inner');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        const slides = document.querySelectorAll('.carousel-item');
+        let slideInterval;
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        function startCarousel() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopCarousel() {
+            clearInterval(slideInterval);
+        }
+        
+        // Start carousel on page load
+        window.addEventListener('load', () => {
+            startCarousel();
+            
+            // Pause on hover
+            const carousel = document.querySelector('.carousel');
+            carousel.addEventListener('mouseenter', stopCarousel);
+            carousel.addEventListener('mouseleave', startCarousel);
+        });
     </script>
 </body>
 </html>
