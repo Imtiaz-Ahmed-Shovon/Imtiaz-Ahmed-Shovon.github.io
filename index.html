@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imtiaz Ahmed - Robotics and Mechatronics Engineer</title>
+    <title>Imtiaz Ahmed – Robotics and Mechatronics Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -698,6 +698,94 @@
             color: var(--success);
         }
 
+        /* Grants & Awards Section */
+        .grants-section {
+            background: var(--card-bg);
+            padding: 100px 0;
+        }
+
+        .grants-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .grant-card {
+            background: linear-gradient(145deg, var(--card-bg), var(--light));
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 176, 255, 0.25);
+        }
+
+        .grant-card::before {
+            content: '\f0b1';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3.5rem;
+            color: rgba(0, 176, 255, 0.1);
+        }
+
+        .grant-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .grant-card h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .grant-card .program {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .grant-card .grant-detail {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(0, 176, 255, 0.3);
+            flex-wrap: wrap;
+        }
+
+        .grant-detail i {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            width: 30px;
+        }
+
+        .grant-detail span {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
         /* Experience Section */
         .experience {
             background: var(--light);
@@ -779,7 +867,7 @@
             color: var(--text-light);
         }
 
-        /* Awards Section */
+        /* Awards & Scholarships Section */
         .awards-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1013,6 +1101,10 @@
             .about-image {
                 height: 350px;
             }
+
+            .grant-card h3 {
+                font-size: 1.6rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1052,6 +1144,10 @@
             .about-image {
                 height: 300px;
             }
+
+            .grant-card {
+                padding: 30px;
+            }
         }
     </style>
 </head>
@@ -1068,6 +1164,7 @@
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#research">Research</a></li>
+                    <li><a href="#grants">Grants</a></li> <!-- New nav item -->
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -1083,7 +1180,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (unchanged, fully consistent with CV) -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
@@ -1114,7 +1211,7 @@
                     </div>
                     
                     <div class="hero-img">
-                        <!-- Profile image -->
+                        <!-- Profile image placeholder -->
                         <img src="profile.jpg" alt="Imtiaz Ahmed" class="profile-img">
                     </div>
                 </div>
@@ -1123,49 +1220,47 @@
                     <div class="category-card" onclick="scrollToSection('about')">
                         <i class="fas fa-user"></i>
                         <h3>About Me</h3>
-                        <p>Learn about my background and journey</p>
+                        <p>Learn about my background</p>
                     </div>
-                    
                     <div class="category-card" onclick="scrollToSection('education')">
                         <i class="fas fa-graduation-cap"></i>
                         <h3>Education</h3>
-                        <p>Academic qualifications and achievements</p>
+                        <p>Qualifications & achievements</p>
                     </div>
-                    
                     <div class="category-card" onclick="scrollToSection('research')">
                         <i class="fas fa-flask"></i>
                         <h3>Research Interests</h3>
-                        <p>My research focus areas</p>
+                        <p>Focus areas</p>
                     </div>
-                    
+                    <div class="category-card" onclick="scrollToSection('grants')">
+                        <i class="fas fa-trophy"></i> <!-- Distinct icon -->
+                        <h3>Research Grants</h3>
+                        <p>NST Fellowship 2025-26</p>
+                    </div>
                     <div class="category-card" onclick="scrollToSection('skills')">
                         <i class="fas fa-cogs"></i>
                         <h3>Skills</h3>
-                        <p>My technical expertise</p>
+                        <p>Technical expertise</p>
                     </div>
-                    
                     <div class="category-card" onclick="scrollToSection('projects')">
                         <i class="fas fa-project-diagram"></i>
                         <h3>Projects</h3>
-                        <p>Technical implementations</p>
+                        <p>Implementations</p>
                     </div>
-                    
                     <div class="category-card" onclick="scrollToSection('experience')">
                         <i class="fas fa-briefcase"></i>
                         <h3>Experience</h3>
-                        <p>Professional work and teaching</p>
+                        <p>Teaching & research</p>
                     </div>
-                    
                     <div class="category-card" onclick="scrollToSection('awards')">
                         <i class="fas fa-award"></i>
                         <h3>Awards</h3>
-                        <p>Recognitions and scholarships</p>
+                        <p>Scholarships & honors</p>
                     </div>
-                    
                     <div class="category-card" onclick="scrollToSection('references')">
                         <i class="fas fa-address-card"></i>
                         <h3>References</h3>
-                        <p>Academic and professional references</p>
+                        <p>Academic references</p>
                     </div>
                 </div>
             </div>
@@ -1181,9 +1276,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>I am an enthusiastic academic specializing in Robotics and Mechatronics Engineering. My expertise spans <span class="highlight">Bio-mechatronics</span>, <span class="highlight">Machine Learning</span>, embedded systems, wearable technology, and IoT-based applications, with a deep commitment to creating innovative solutions for practical, real-world problems.</p>
-                    
-                    <p>I am currently pursuing my Master's degree at the University of Dhaka, conducting my research under the guidance of <span class="highlight">Dr. Md. Mehedi Hasan</span>.</p>
-                    
+                    <p>I am currently pursuing my Master's degree at the University of Dhaka, conducting my research under the guidance of <span class="highlight">Dr. Md. Mehedi Hasan</span>. My Master's thesis is supported by the prestigious NST Fellowship from the Ministry of Science and Technology.</p>
                     <div class="cv-download" style="margin-top: 30px;">
                         <a href="Imtiaz_CV.pdf" download="Imtiaz_Ahmed_CV.pdf" class="btn">
                             <i class="fas fa-download"></i> Download Full CV
@@ -1222,7 +1315,7 @@
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education Section (fully aligned with CV) -->
     <section id="education" class="education-section">
         <div class="container">
             <div class="section-title">
@@ -1232,7 +1325,7 @@
                 <div class="education-item">
                     <h3>Master of Science in Robotics and Mechatronics Engineering</h3>
                     <p class="institution">University of Dhaka, Bangladesh</p>
-                    <p class="gpa">CGPA: 3.96/4.00 - Rank 2nd (Thesis defense pending)</p>
+                    <p class="gpa">CGPA: 3.96/4.00 – Rank 2nd (Thesis defense pending)</p>
                     <p><strong>Dissertation:</strong> Multi-Sensor Fusion for Controlling a Soft Pneumatic Hand Exoskeleton</p>
                     <p><strong>Supervisor:</strong> Dr. Md Mehedi Hasan</p>
                     <div class="tag-list">
@@ -1295,6 +1388,41 @@
                     <div class="interest-tag">Wearable Devices</div>
                     <div class="interest-tag">Assistive Technology</div>
                     <div class="interest-tag">Soft Robotics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEW SECTION: RESEARCH GRANTS ========== -->
+    <section id="grants" class="grants-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Grants</h2>
+            </div>
+            <div class="grants-container">
+                <div class="grant-card">
+                    <span class="grant-badge"><i class="fas fa-award"></i> Ministry of Science and Technology – NST Fellowship</span>
+                    <h3>2025–2026 NST Fellowship</h3>
+                    <span class="program">MS/MSc – Physical Science</span>
+                    <p style="font-size: 1.2rem; font-weight: 500; margin-top: 10px;">Level: M.Sc. Thesis Research Grant</p>
+                    <div style="background: rgba(0,176,255,0.05); padding: 20px; border-radius: 15px; margin-top: 20px;">
+                        <p style="font-size: 1.1rem; font-style: italic; color: var(--text);">
+                            <strong>Research Title:</strong><br>
+                            “Multi-Sensor Approach for Intuitive Control of an Optimized Ecoflex Soft Pneumatic Actuator for Rehabilitation”
+                        </p>
+                    </div>
+                    <div class="grant-detail">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Fellowship period: 2025–2026</span>
+                    </div>
+                    <div class="grant-detail">
+                        <i class="fas fa-flask"></i>
+                        <span>Supervisor: Dr. Md Mehedi Hasan, University of Dhaka</span>
+                    </div>
+                    <div class="grant-detail">
+                        <i class="fas fa-tags"></i>
+                        <span>Soft Robotics · Sensor Fusion · Rehabilitation · Ecoflex Actuators</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1445,7 +1573,7 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section (aligned with CV dates) -->
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-title">
@@ -1455,7 +1583,7 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Undergraduate Research Assistant</h3>
-                        <span class="date">Dr. Md Mehedi Hasan | Jan 2023 - Dec 2023</span>
+                        <span class="date">Dr. Md Mehedi Hasan | Jan 2023 – Dec 2023</span>
                         <p>Data collection and analysis for projects. Participated in experimental setup and testing procedures.</p>
                         <div class="tag-list">
                             <span class="tag">Data Analysis</span>
@@ -1468,7 +1596,7 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Math Instructor</h3>
-                        <span class="date">10 Minute School | May 2023 - June 2025</span>
+                        <span class="date">10 Minute School | May 2023 – June 2025</span>
                         <p>Teaching mathematics to students preparing for competitive exams.</p>
                         <div class="tag-list">
                             <span class="tag">Online Education</span>
@@ -1508,7 +1636,7 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Undergraduate Research Assistant</h3>
-                        <span class="date">Dr. Shugata Ahmed | Jan 2019 - Mar 2024</span>
+                        <span class="date">Dr. Shugata Ahmed | Jan 2019 – Mar 2024</span>
                         <p>Contributed to biomimetic fish robot design and fluidic actuation research.</p>
                         <div class="tag-list">
                             <span class="tag">Biomimetic Design</span>
@@ -1521,7 +1649,7 @@
         </div>
     </section>
 
-    <!-- Awards Section -->
+    <!-- Awards & Scholarships Section -->
     <section id="awards">
         <div class="container">
             <div class="section-title">
@@ -1620,7 +1748,7 @@
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
-                <p class="copyright">© 2023 Imtiaz Ahmed. All rights reserved.</p>
+                <p class="copyright">© 2025 Imtiaz Ahmed. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1648,7 +1776,6 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
@@ -1677,7 +1804,7 @@
         
         // Animation on scroll
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.education-item, .skill-category, .project-card, .timeline-content, .award-card');
+            const elements = document.querySelectorAll('.education-item, .skill-category, .project-card, .timeline-content, .award-card, .grant-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1691,7 +1818,7 @@
         };
 
         // Initialize elements with hidden state
-        document.querySelectorAll('.education-item, .skill-category, .project-card, .timeline-content, .award-card').forEach(el => {
+        document.querySelectorAll('.education-item, .skill-category, .project-card, .timeline-content, .award-card, .grant-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
@@ -1704,7 +1831,6 @@
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
         
-        // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-theme');
@@ -1714,7 +1840,6 @@
         
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-theme');
-            
             if (document.body.classList.contains('dark-theme')) {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
@@ -1724,8 +1849,6 @@
                 themeIcon.classList.add('fa-moon');
                 localStorage.setItem('theme', 'light');
             }
-            
-            // Update header background after theme change
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.style.background = document.body.classList.contains('dark-theme') 
@@ -1769,14 +1892,9 @@
         
         function updateCarousel() {
             carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Update indicators
             indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
+                if (index === currentSlide) indicator.classList.add('active');
+                else indicator.classList.remove('active');
             });
         }
         
@@ -1788,11 +1906,8 @@
             clearInterval(slideInterval);
         }
         
-        // Start carousel on page load
         window.addEventListener('load', () => {
             startCarousel();
-            
-            // Pause on hover
             const carousel = document.querySelector('.carousel');
             carousel.addEventListener('mouseenter', stopCarousel);
             carousel.addEventListener('mouseleave', startCarousel);
